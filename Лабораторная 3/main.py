@@ -1,7 +1,6 @@
 class Book:
     """ Базовый класс книги. """
     def __init__(self, name: str, author: str):
-        print("init basa") # перед сдачей удалить
         self._name = name
         self._author = author
 
@@ -15,7 +14,6 @@ class Book:
 class PaperBook(Book):
     """Бумажная книга"""
     def __init__(self, name: str, author: str, pages: int):
-        print("init PaperBook ")  # перед сдачей удалить
         super().__init__(name, author)
         if not isinstance(pages, int):
             raise ValueError("Данные должны быть типа int")
@@ -29,7 +27,6 @@ class PaperBook(Book):
 
 class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
-        print("init AudioBook ")   # перед сдачей удалить
         super().__init__(name, author)
         if not isinstance(duration, float):
             raise ValueError("Данные должны быть типа float")
